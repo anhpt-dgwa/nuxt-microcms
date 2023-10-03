@@ -2,7 +2,7 @@
   <div class="post">
     <div class="post-media post-thumb">
       <a href="blog-single.html">
-        <img src="images/blog/blog-post-1.jpg" alt="">
+        <img src="~/assets/images/blog/blog-post-1.jpg" alt="">
       </a>
     </div>
     <h2 class="post-title"><a href="blog-single.html">How To Wear Bright Shoes</a></h2>
@@ -31,7 +31,7 @@
   <div class="post">
     <div class="post-media post-thumb">
       <a href="blog-single.html">
-        <img src="images/blog/blog-post-2.jpg" alt="">
+        <img src="~/assets/images/blog/blog-post-2.jpg" alt="">
       </a>
     </div>
     <h2 class="post-title"><a href="blog-single.html">Two Ways To Wear Straight Shoes</a></h2>
@@ -59,7 +59,7 @@
   <div class="post">
     <div class="post-media post-thumb">
       <a href="blog-single.html">
-        <img src="images/blog/blog-post-3.jpg" alt="">
+        <img src="~/assets/images/blog/blog-post-3.jpg" alt="">
       </a>
     </div>
     <h2 class="post-title"><a href="blog-single.html">Making A Denim Statement</a></h2>
@@ -178,4 +178,37 @@
       </li>
     </ul>
   </div>
+  <h1>Nuxt3 Jamstack Blogs</h1>
+  <ul>
+    <li v-for="blog in data?.contents" :key="blog.id">
+      <NuxtLink :to="`/${blog.id}`">
+        <img
+          :src="blog.eyecatch?.url"
+          :width="blog.eyecatch?.width"
+          :height="blog.eyecatch?.height"
+          alt=""
+        />
+        <div>
+          <div>
+            {{ blog.category?.name }}
+          </div>
+          <div>
+            {{ blog.title }}
+          </div>
+          <div>
+            {{ blog.publishedAt ?? blog.createdAt }}
+          </div>
+        </div>
+      </NuxtLink>
+    </li>
+  </ul>
 </template>
+
+<script setup lang="ts">
+import { Blog } from "~~/types/blog";
+
+const { data } = await useMicroCMSGetList<Blog>({
+  endpoint: "blogs",
+});
+console.log(data)
+</script>

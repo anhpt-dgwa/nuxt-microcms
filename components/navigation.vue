@@ -14,17 +14,7 @@
 					<div class="logo text-center">
 						<a href="index.html">
 							<!-- replace logo here -->
-							<svg width="135px" height="29px" viewBox="0 0 155 29" version="1.1" xmlns="http://www.w3.org/2000/svg"
-								xmlns:xlink="http://www.w3.org/1999/xlink">
-								<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-size="40"
-									font-family="AustinBold, Austin" font-weight="bold">
-									<g id="Group" transform="translate(-108.000000, -297.000000)" fill="#000000">
-										<text id="AVIATO">
-											<tspan x="108.94" y="325">AVIATO</tspan>
-										</text>
-									</g>
-								</g>
-							</svg>
+							Nuxt Microcms
 						</a>
 					</div>
 				</div>
@@ -89,16 +79,6 @@
 							</ul>
 						</li><!-- / Search -->
 
-						<!-- Languages -->
-						<li class="commonSelect">
-							<select class="form-control">
-								<option>EN</option>
-								<option>DE</option>
-								<option>FR</option>
-								<option>ES</option>
-							</select>
-						</li><!-- / Languages -->
-
 					</ul><!-- / .nav .navbar-nav .navbar-right -->
 				</div>
 			</div>
@@ -128,7 +108,7 @@
 
 						<!-- Home -->
 						<li class="dropdown ">
-							<a href="index.html">Home</a>
+							<a href="/">Home</a>
 						</li><!-- / Home -->
 
 
@@ -145,9 +125,9 @@
 										<ul>
 											<li class="dropdown-header">Pages</li>
 											<li role="separator" class="divider"></li>
-											<li><a href="shop.html">Shop</a></li>
-											<li><a href="checkout.html">Checkout</a></li>
-											<li><a href="cart.html">Cart</a></li>
+											<li><a href="/shop">Shop</a></li>
+											<li><a href="/checkout">Checkout</a></li>
+											<li><a href="/cart">Cart</a></li>
 											<li><a href="pricing.html">Pricing</a></li>
 											<li><a href="confirmation.html">Confirmation</a></li>
 
@@ -183,8 +163,8 @@
 										<ul>
 											<li class="dropdown-header">Introduction</li>
 											<li role="separator" class="divider"></li>
-											<li><a href="contact.html">Contact Us</a></li>
-											<li><a href="about.html">About Us</a></li>
+											<li><a href="/contact">Contact Us</a></li>
+											<li><a href="/about">About Us</a></li>
 											<li><a href="404.html">404 Page</a></li>
 											<li><a href="coming-soon.html">Coming Soon</a></li>
 											<li><a href="faq.html">FAQ</a></li>
@@ -208,15 +188,15 @@
 										<ul>
 											<li class="dropdown-header">Utility</li>
 											<li role="separator" class="divider"></li>
-											<li><a href="login.html">Login Page</a></li>
-											<li><a href="signin.html">Signin Page</a></li>
-											<li><a href="forget-password.html">Forget Password</a></li>
+											<li><a href="/login">Login Page</a></li>
+											<li><a href="/signin">Signin Page</a></li>
+											<li><a href="/forget-password">Forget Password</a></li>
 										</ul>
 									</div>
 
 									<!-- Mega Menu -->
 									<div class="col-sm-3 col-xs-12">
-										<a href="shop.html">
+										<a href="/shop">
 											<img class="img-responsive" src="~/assets/images/shop/header-img.jpg" alt="menu image" />
 										</a>
 									</div>
@@ -232,7 +212,7 @@
 								role="button" aria-haspopup="true" aria-expanded="false">Blog <span
 									class="tf-ion-ios-arrow-down"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
+								<li><a href="/blog">Blog Left Sidebar</a></li>
 								<li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
 								<li><a href="blog-full-width.html">Blog Full Width</a></li>
 								<li><a href="blog-grid.html">Blog 2 Columns</a></li>
@@ -259,3 +239,9 @@
 		</nav>
 	</section>
 </template>
+
+<style lang="scss">
+	.logo {
+		font-size: 38px;
+	}
+</style>

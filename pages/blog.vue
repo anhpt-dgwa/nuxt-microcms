@@ -3,20 +3,12 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <sidebar_post />
+          <SidebarPost />
         </div>
         <div class="col-md-8">
-          <blog_post />
+          <BlogPost />
         </div>
       </div>
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  head: {
-    title: 'Blog | Nuxt',
-  },
-}
-</script>

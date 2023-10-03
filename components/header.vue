@@ -1,17 +1,17 @@
 <template>
-    <section class="page-header">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="content">
-							<h1 class="page-name">Nuxt</h1>
-							<ol class="breadcrumb">
-								<li><a href="/">Home</a></li>
-								<li class="active">@@pagination</li>
-							</ol>
-						</div>
+	<section class="page-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="content">
+						<h1 class="page-name">Nuxt Microcms</h1>
+						<ol class="breadcrumb">
+							<li><a href="/">Home</a></li>
+							<li class="active">@@pagination</li>
+						</ol>
 					</div>
 				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 </template>
