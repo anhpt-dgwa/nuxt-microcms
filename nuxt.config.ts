@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ssr: false,
   devtools: { enabled: true },
   app: {
     head: {
@@ -40,9 +41,19 @@ export default defineNuxtConfig({
       extensions: ['.vue'],
     }
   ],
-  modules: ["nuxt-microcms-module"],
-  microCMS: {
-    serviceDomain: 'https://yuzobcsj9a.microcms.io/api/v1/',
-    apiKey: 'q3wOL4p41lveC4pSEBGiMGIbgkf8FCFxltjg',
-  }
+  modules: [
+    [
+      'nuxt-microcms-module',
+      {
+        serviceDomain: 'yuzobcsj9a.microcms.io', // YOUR_DOMAIN is the XXXX part of XXXX.microcms.io
+        apiKey: 'q3wOL4p41lveC4pSEBGiMGIbgkf8FCFxltjg',
+        // target: 'server',
+      },
+    ],
+  ],
+  //modules: ["nuxt-microcms-module"],
+  //microCMS: {
+  //  serviceDomain: 'https://yuzobcsj9a.microcms.io/api/v1/',
+  //  apiKey: 'q3wOL4p41lveC4pSEBGiMGIbgkf8FCFxltjg',
+  //}
 })

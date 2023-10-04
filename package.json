@@ -16,6 +16,10 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
+    "@nuxt/kit": "^3.7.4",
+    "@nuxtjs/dotenv": "^1.4.1",
+    "axios": "^1.5.1",
+    "defu": "^6.1.2",
     "nuxt-microcms-module": "^3.0.2",
     "sass": "^1.68.0",
     "vuetify": "^3.4.0-alpha.1"
