@@ -1,7 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+//require("dotenv").config();
+//const { API_KEY } = process.env;
+
+//import { defineNuxtConfig } from 'nuxt/config'
+//const { BASE_URL, API_KEY } = process.env;
 export default defineNuxtConfig({
   ssr: false,
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   app: {
     head: {
       title: 'Nuxt',
@@ -41,19 +46,19 @@ export default defineNuxtConfig({
       extensions: ['.vue'],
     }
   ],
-  modules: [
-    [
-      'nuxt-microcms-module',
-      {
-        serviceDomain: 'yuzobcsj9a.microcms.io', // YOUR_DOMAIN is the XXXX part of XXXX.microcms.io
-        apiKey: 'q3wOL4p41lveC4pSEBGiMGIbgkf8FCFxltjg',
-        // target: 'server',
-      },
-    ],
-  ],
-  //modules: ["nuxt-microcms-module"],
-  //microCMS: {
-  //  serviceDomain: 'https://yuzobcsj9a.microcms.io/api/v1/',
-  //  apiKey: 'q3wOL4p41lveC4pSEBGiMGIbgkf8FCFxltjg',
-  //}
+  // modules: [
+  //   [
+  //     'nuxt-microcms-module',
+  //     {
+  //       serviceDomain: 'yuzobcsj9a.microcms.io', // YOUR_DOMAIN is the XXXX part of XXXX.microcms.io
+  //       apiKey: 'q3wOL4p41lveC4pSEBGiMGIbgkf8FCFxltjg',
+  //       // target: 'server',
+  //     },
+  //   ],
+  // ],
+  modules: ["nuxt-microcms-module"],
+  microCMS: {
+    serviceDomain: process.env.MICROCMS_SERVICE_DOMAIN,
+    apiKey: process.env.MICROCMS_API_KEY,
+  },
 })

@@ -13,42 +13,23 @@
     <!-- Widget Latest Posts -->
     <div class="widget widget-latest-post">
       <h4 class="widget-title">Latest Posts</h4>
-      <div class="media">
-        <a class="pull-left" href="#!">
-          <img class="media-object" src="~/assets/images/blog/post-thumb.jpg" alt="Image">
-        </a>
+
+      <div class="media" v-for="blog in blogs?.contents" :key="blog.id">
+        <NuxtLink :to="`/${blog.id}`" class="pull-left">
+          <img
+            :src="blog.eyecatch?.url"
+            :width="blog.eyecatch?.width"
+            :height="blog.eyecatch?.height"
+            alt=""
+            class="media-object"
+          />
+        </NuxtLink>
         <div class="media-body">
-          <h4 class="media-heading"><a href="#!">Introducing Swift for Mac</a></h4>
+          <h4 class="media-heading"><NuxtLink :to="`/${blog.id}`">{{ blog.title }}</NuxtLink></h4>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, officia.</p>
         </div>
       </div>
-      <div class="media">
-        <a class="pull-left" href="#!">
-          <img class="media-object" src="~/assets/images/blog/post-thumb-2.jpg" alt="Image">
-        </a>
-        <div class="media-body">
-          <h4 class="media-heading"><a href="#!">Welcome to Themefisher Family</a></h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, officia.</p>
-        </div>
-      </div>
-      <div class="media">
-        <a class="pull-left" href="#!">
-          <img class="media-object" src="~/assets/images/blog/post-thumb-3.jpg" alt="Image">
-        </a>
-        <div class="media-body">
-          <h4 class="media-heading"><a href="#!">Warm welcome from swift</a></h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, officia.</p>
-        </div>
-      </div>
-      <div class="media">
-        <a class="pull-left" href="#!">
-          <img class="media-object" src="~/assets/images/blog/post-thumb.jpg" alt="Image">
-        </a>
-        <div class="media-body">
-          <h4 class="media-heading"><a href="#!">Introducing Swift for Mac</a></h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, officia.</p>
-        </div>
-      </div>
+
     </div>
     <!-- End Latest Posts -->
 
@@ -56,15 +37,8 @@
     <div class="widget widget-category">
       <h4 class="widget-title">Categories</h4>
       <ul class="widget-category-list">
-            <li><a href="#!">Animals</a>
-            </li>
-            <li><a href="#!">Landscape</a>
-            </li>
-            <li><a href="#!">Portrait</a>
-            </li>
-            <li><a href="#!">Wild Life</a>
-            </li>
-            <li><a href="#!">Video</a>
+            <li v-for="category in categories?.contents" :key="category.id">
+              <NuxtLink :to="`/${category.id}`">{{ category.name }}</NuxtLink>
             </li>
         </ul>
     </div> <!-- End category  -->
@@ -87,3 +61,16 @@
     </div> <!-- End tag  -->
   </aside>
 </template>
+
+<script setup lang="ts">
+import { Blog } from "~~/types/blog";
+import { Category } from "~~/types/category";
+
+const { data: blogs } = await useMicroCMSGetList<Blog>({
+  endpoint: "blogs",
+});
+const { data: categories } = await useMicroCMSGetList<Category>({
+  endpoint: "categories",
+});
+console.log(blogs)
+</script>
