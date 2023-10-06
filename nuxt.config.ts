@@ -11,12 +11,12 @@ export default defineNuxtConfig({
     head: {
       title: 'Nuxt',
       script: [
-        { src: '_nuxt/plugins/jquery/dist/jquery.min.js' },
-        { src: '_nuxt/plugins/bootstrap/js/bootstrap.min.js'},
+        { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js' },
+        { src: 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js'},
         //{ src: '_nuxt/plugins/bootstrap-touchspin/src/jquery.bootstrap-touchspin.js'},
-        { src: '_nuxt/plugins/slick/slick.min.js' },
+        { src: 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js' },
         //{ src: '_nuxt/plugins/slick/slick-animation.min.js' },
-        { src: '_nuxt/assets/js/script.js' },
+        //{ src: '_nuxt/assets/js/script.js' },
       ],
     }
   },
