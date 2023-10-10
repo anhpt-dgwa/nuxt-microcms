@@ -46,7 +46,7 @@
               
               <!-- thumb -->
               <ol class='carousel-indicators mCustomScrollbar meartlab'>
-                <li data-target='#carousel-custom' data-slide-to='0' :class="[{'active': imgIndex === 0}]" v-for="(img, imgIndex) in data?.gallery" :key="imgIndex">
+                <li data-target='#carousel-custom' :data-slide-to="`${imgIndex + 0}`" v-for="(img, imgIndex) in data?.gallery" :key="imgIndex">
                   <img
                     :src="img.url"
                     :width="img.width"
@@ -68,7 +68,7 @@
               <span>color:</span>
               <ul>
                 <li v-for="(color, colorIndex) in data?.color" :key="colorIndex">
-                  <a href="#!" class="swatch-violet">{{ color }}</a>
+                  <a href="#!" :class="color"></a>
                 </li>
               </ul>
             </div>
@@ -135,5 +135,17 @@ console.log(data)
       max-width: 100%;
       height: auto;
     }
+  }
+  .Blue {
+    background-color: #8da1cd;
+  }
+  .Pink {
+    background-color: #d186c8;
+  }
+  .Black {
+    background-color: #000;
+  }
+  .Cream {
+    background-color: #e6e2d6;
   }
 </style>carousel-custom

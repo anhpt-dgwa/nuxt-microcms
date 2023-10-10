@@ -3,7 +3,12 @@
     <ul class="pager">
       <li v-if="current > 1" class="page arrow">
         <nuxt-link :to="getPath(current - 1)">
-          <img src="/images/icon_arrow_left.svg" alt="前のページへ" />
+          <img
+            src="/images/icon_arrow_left.svg"
+            width="24"
+            height="24"
+            alt="前のページへ"
+          />
         </nuxt-link>
       </li>
       <li v-if="3 < current" class="page">
@@ -35,7 +40,12 @@
       </li>
       <li v-if="current < pager.length" class="page arrow">
         <nuxt-link :to="getPath(current + 1)">
-          <img src="/images/icon_arrow_right.svg" alt="次のページへ" />
+          <img
+            src="/images/icon_arrow_right.svg"
+            width="24"
+            height="24"
+            alt="次のページへ"
+          />
         </nuxt-link>
       </li>
     </ul>
@@ -59,13 +69,80 @@ export default {
       required: false,
       default: undefined,
     },
+    tag: {
+      type: Object,
+      required: false,
+      default: undefined,
+    },
+    author: {
+      type: Object,
+      required: false,
+      default: undefined,
+    },
   },
   methods: {
     getPath(p) {
-      return `/${
-        this.category !== undefined ? `category/${this.category.id}/` : ''
-      }page/${p}`;
+      if (this.category !== undefined) {
+        return `/category/${this.category.id}/page/${p}`;
+      } else if (this.tag !== undefined) {
+        return `/tag/${this.tag.id}/page/${p}`;
+      } else if (this.author !== undefined) {
+        return `/author/${this.author.id}/page/${p}`;
+      } else {
+        return `/page/${p}`;
+      }
     },
   },
 };
 </script>
+
+<style scoped>
+.wrapper {
+  padding: 16px 0;
+}
+
+.pager {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0 0;
+}
+
+.omission {
+  color: var(--color-text-off);
+  margin: 4px 12px;
+}
+
+.page {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  margin: 4px;
+
+  &.arrow {
+    margin: 4px 12px;
+  }
+
+  &.active {
+    background-color: var(--color-blue);
+
+    a,
+    a:hover {
+      color: #fff;
+    }
+  }
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: var(--color-text-sub);
+
+    &:hover {
+      color: var(--color-blue);
+    }
+  }
+}
+</style>

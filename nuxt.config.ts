@@ -1,3 +1,4 @@
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 //require("dotenv").config();
 //const { API_KEY } = process.env;
@@ -12,11 +13,11 @@ export default defineNuxtConfig({
       title: 'Nuxt',
       script: [
         { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js' },
-        { src: 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js'},
-        //{ src: '_nuxt/plugins/bootstrap-touchspin/src/jquery.bootstrap-touchspin.js'},
+        { src: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js'},
+        { src: 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-touchspin/4.7.3/jquery.bootstrap-touchspin.min.js'},
         { src: 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js' },
         //{ src: '_nuxt/plugins/slick/slick-animation.min.js' },
-        //{ src: '_nuxt/assets/js/script.js' },
+        { src: '_nuxt/assets/js/script.js' },
       ],
     }
   },
@@ -28,7 +29,7 @@ export default defineNuxtConfig({
     '~/plugins/slick/slick-theme.css',
     '~/assets/scss/style.scss',
   ],
-  // plugins: [
+  plugins: [
   //   { src: '~/plugins/jquery/dist/jquery.min.js', mode: 'client' },
   //   { src: '~/plugins/bootstrap/js/bootstrap.min.js', mode: 'client' },
   //   { src: '~/plugins/bootstrap-touchspin/src/jquery.bootstrap-touchspin.js', mode: 'client' },
@@ -38,7 +39,7 @@ export default defineNuxtConfig({
   //   { src: '~/plugins/slick/slick.min.js', mode: 'client' },
   //   { src: '~/plugins/slick/slick-animation.min.js', mode: 'client' },
   //   { src: '~/assets/js/script.js', mode: 'client' },
-  // ],
+  ],
   components: [
     {
       path: '~/components',

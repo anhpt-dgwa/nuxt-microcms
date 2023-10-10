@@ -70,10 +70,23 @@
 
 <script setup lang="ts">
 import { Product } from "~~/types/product";
-
 const { data: products } = await useMicroCMSGetList<Product>({
   endpoint: "products",
-  //queries: { limit: 1 },
+  queries: { limit: 10 },
 });
 console.log(products)
 </script>
+
+<!-- <script>
+export default {
+  async asyncData({ $microcms }) {
+    const products = await $microcms.get({
+      endpoint: 'products',
+      queries: { limit: 2 },
+    })
+    return {
+      products,
+    }
+  },
+}
+</script> -->
